@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, redirect, render_template, request, url_for
 from plyer import notification
-from pystray import Icon, Menu, MenuItem
 
 app = Flask(__name__)
 
@@ -34,15 +33,5 @@ def index():
     return render_template("index.html")
 
 
-def system_tray():
-    icon = Icon("Flask App")
-    icon.menu = Menu(
-        MenuItem("Open", lambda: app.run(host="0.0.0.0", port=5000)),
-        MenuItem("Exit", lambda: icon.stop()),
-    )
-    icon.run()
-
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-    system_tray()
