@@ -1,0 +1,7 @@
+flaskapp.spec
+pyinstaller.txt
+pylertest.py
+output
+dist
+build
+__pycache__
